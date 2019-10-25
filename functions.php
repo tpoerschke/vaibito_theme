@@ -23,8 +23,13 @@ function bootstrap_nav_class($classes, $item) {
 function add_bootstrap_atts($atts, $item, $args) {
     // Bootstrap-Klassen zum NavbarMenu hinzufügen
     if($args->theme_location == 'menu-1') {
-      $atts['class'] = 'nav-link';
+        $atts['class'] = 'nav-link';
+
+        if($atts["aria-current"] == "page") {
+            $atts['class'] .= ' active';
+        }
     }
+
     return $atts;
 }
 // Funktionen für Bootstrap (s.o.) bekannt machen

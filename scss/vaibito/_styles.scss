@@ -1,3 +1,12 @@
+.main-navigation {
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+
+    .nav-link {
+        display: inline-block;
+    }
+}
+
 #main article {
     header, div, footer {
         margin-left: 0;
