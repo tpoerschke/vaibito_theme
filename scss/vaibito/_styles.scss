@@ -7,12 +7,24 @@
     }
 }
 
-#main article {
-    header, div, footer {
-        margin-left: 0;
-        margin-right: 0;
+#main {
+    article {
+        header {
+            margin-top: 0;
+        }
 
-        padding-left: 0;
-        padding-right: 0;
+        header, .entry-content, footer {
+            margin-left: 0;
+            margin-right: 0;
+
+            padding-left: 0;
+            padding-right: 0;
+        }
+    
+        &.page {
+            .entry-title::before {
+                margin-top: 0.5rem;
+            }
+        }
     }
 }
