@@ -40,7 +40,7 @@
 
     <div id="content" class="site-content container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-md-3">
                 <?php get_template_part( 'template-parts/nav/main-nav'); ?>
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-9">
