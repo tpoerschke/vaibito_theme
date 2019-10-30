@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 ?>
-<div class="site-branding d-flex align-items-center">
+<div class="site-branding d-sm-flex align-items-center">
 
 	<?php if ( has_custom_logo() ) : ?>
 		<div class="site-logo"><?php the_custom_logo(); ?></div>
