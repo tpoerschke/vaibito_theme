@@ -23,12 +23,17 @@
     }
 }
 
-.main-navigation {
+body #content .main-navigation {
+    display: flex;
     font-size: $font-size-base;
     font-weight: $font-weight-normal;
 
     .nav-link {
         display: inline-block;
+    }
+
+    .navbar-toggler {
+        float: right;
     }
 }
 
