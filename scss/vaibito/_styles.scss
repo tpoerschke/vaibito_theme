@@ -1,4 +1,27 @@
+.site-branding {
 
+    .site-logo {
+        position: relative;
+        right: initial;
+        top: 0;
+
+        margin-right: $grid-gutter-width;
+        
+        .custom-logo-link {
+            width: 150px;
+            height: auto;
+        }
+    }
+
+    .site-description {
+        &::before {
+            display: none;
+            content: '';
+        }
+
+        display: block;
+    }
+}
 
 .main-navigation {
     font-size: $font-size-base;

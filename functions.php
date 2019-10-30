@@ -35,3 +35,17 @@ function add_bootstrap_atts($atts, $item, $args) {
 // Funktionen für Bootstrap (s.o.) bekannt machen
 add_filter('nav_menu_css_class' , 'bootstrap_nav_class' , 10 , 2);
 add_filter('nav_menu_link_attributes', 'add_bootstrap_atts', 10, 3);
+
+
+// Logo Support des Parent Themes überschreiben
+// (durch Änderung der Priorität)
+function override_customlogo() {
+    //remove_theme_support('custom-logo');
+    add_theme_support('custom-logo', [
+        'height'      => 250,
+        'width'       => 250,
+        'flex-width'  => true,
+        'flex-height' => true,
+    ]);
+}
+add_action('after_setup_theme', 'override_customlogo', 20);
