@@ -49,3 +49,67 @@ function override_customlogo() {
     ]);
 }
 add_action('after_setup_theme', 'override_customlogo', 20);
+
+// Register Custom Post Type
+function register_post_type_tours() {
+
+	$labels = [
+		'name'                  => 'Touren',
+		'singular_name'         => 'Tour',
+		'menu_name'             => 'Touren',
+		'name_admin_bar'        => 'Tour',
+		'archives'              => 'Touren-Archiv',
+		'attributes'            => 'Touren-Attribute',
+		'parent_item_colon'     => 'Parent Item:',
+		'all_items'             => 'Alle Touren',
+		'add_new_item'          => 'Tour erstellen',
+		'add_new'               => 'Hinzufügen',
+		'new_item'              => 'Neue Tour',
+		'edit_item'             => 'Tour bearbeiten',
+		'update_item'           => 'Tour aktualisieren',
+		'view_item'             => 'Tour ansehen',
+		'view_items'            => 'Touren ansehen',
+		'search_items'          => 'Suche Tour',
+		'not_found'             => 'Keine Tour gefunden',
+		'not_found_in_trash'    => 'Keine Tour im Papierkorb gefunden',
+		'featured_image'        => 'Featured Image',
+		'set_featured_image'    => 'Set featured image',
+		'remove_featured_image' => 'Remove featured image',
+		'use_featured_image'    => 'Use as featured image',
+		'insert_into_item'      => 'Insert into item',
+		'uploaded_to_this_item' => 'Uploaded to this item',
+		'items_list'            => 'Touren-Übersicht',
+		'items_list_navigation' => 'Touren-Übersicht Navigation',
+		'filter_items_list'     => 'Filter Touren-Übersicht',
+    ];
+	$args = [
+		'label'                 => 'Tour',
+		'description'           => 'Stellt eine Tour dar',
+		'labels'                => $labels,
+		'supports'              => ['title', 'editor'],
+		'taxonomies'            => ['post_tag'],
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+        'show_in_rest'          => true,
+        // todo: weitere einfügen
+        // todo: Zugriffsbeschränkung
+        'template' => [
+            ['core/paragraph', [
+                'placeholder' => 'Kurzbeschreibung',
+            ]],
+        ],
+    ];
+	register_post_type('tours', $args);
+
+}
+add_action('init', 'register_post_type_tours', 0);
