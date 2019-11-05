@@ -72,3 +72,13 @@ body #content .main-navigation {
     }
     
 }
+
+body.home {
+    .entry-header {
+        display: none;
+    }
+
+    .wp-block-getwid-image-hotspot {
+        margin-top: 0;
+    }
+}
