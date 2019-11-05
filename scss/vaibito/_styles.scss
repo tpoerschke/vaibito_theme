@@ -46,26 +46,29 @@ body #content .main-navigation {
     }
 }
 
-#main {
-    article {
-        header {
-            margin-top: 0;
-        }
+.archive #main header {
+    margin-bottom: 0;
+}
 
-        header, .entry-content, footer {
-            margin-left: 0;
-            margin-right: 0;
+#main article, .archive #main {
+    header {
+        margin-top: 0;
+    }
 
-            padding-left: 0;
-            padding-right: 0;
+    header, .entry-content, footer {
+        margin-left: 0;
+        margin-right: 0;
 
-            max-width: 100%;
-        }
-    
-        &.page {
-            .entry-title::before {
-                margin-top: 0.5rem;
-            }
+        padding-left: 0;
+        padding-right: 0;
+
+        max-width: 100%;
+    }
+
+    &.page {
+        .entry-title::before {
+            margin-top: 0.5rem;
         }
     }
+    
 }
