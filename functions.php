@@ -105,7 +105,31 @@ function register_post_type_tours() {
         // todo: Zugriffsbeschränkung
         'template' => [
             ['core/paragraph', [
-                'placeholder' => 'Kurzbeschreibung',
+                'placeholder' => 'Kurzbeschreibung, die alle sehen können...',
+			]],
+			['core/more'],
+			// Der Teil, den nur die Gäste sehen können
+			['core/shortcode', [
+                'text' => '[UAS_guest hint="" in="" admin="0"]',
+			]],
+			['core/gallery'],
+			['core/shortcode', [
+                'text' => '[/UAS_guest]',
+			]],
+			// Der Teil, der nur für eingeloggte Benutzer ist
+			['core/shortcode', [
+                'text' => '[UAS_loggedin hint="" ex=""]',
+			]],
+			['core/paragraph', [
+                'placeholder' => 'Ein ausführlicher Bericht, den nur eingeloggte Benutzer sehen können',
+			]],
+			['core/gallery'],
+			['core/paragraph', [
+                'placeholder' => 'Linkliste zu z.B. externen Bildarchiven',
+			]],
+			['core/file'],
+			['core/shortcode', [
+                'text' => '[/UAS_loggedin]',
             ]],
         ],
     ];
