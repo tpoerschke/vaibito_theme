@@ -1,3 +1,19 @@
+// OVERRIDE PARENT THEME
+input[type="button"], input[type="reset"], input[type="submit"] {
+    background-color: $primary;
+
+    &:hover {
+        background-color: #30851f;
+    }
+
+    &:disabled:hover {
+        background-color: $primary;
+        cursor: default;
+    }
+}
+
+
+// VAIBITO STYLES
 .site-branding {
 
     @include media-breakpoint-down(xs) {
