@@ -63,8 +63,16 @@ body #content .main-navigation {
         display: inline-block;
     }
 
-    .navbar-toggler {
-        float: right;
+    @include media-breakpoint-down(md) {
+        flex-direction: row-reverse;
+        margin-right: 0;
+
+        .nav-link {
+            padding: {
+                left: 10px;
+                right: 10px;
+            };
+        }
     }
 }
 
