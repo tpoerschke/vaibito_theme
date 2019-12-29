@@ -13,8 +13,14 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentynineteen' ); ?></a>
 
 		<header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
+			
+			<?php if(is_user_logged_in()): ?>
+			<div id="logged-in-display">
+				<span>Willkommen, <?= esc_html(wp_get_current_user()->display_name) ?></span>
+			</div>
+			<?php endif; ?>
 
-			<div class="site-branding-container">
+			<div class="site-branding-container <?php if(is_user_logged_in()) echo "mt-3 mt-md-0"; ?>">
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 			</div><!-- .site-branding-container -->
 

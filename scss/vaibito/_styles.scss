@@ -121,3 +121,12 @@ body.home {
         margin-top: 0;
     }
 }
+
+#logged-in-display {
+    position: absolute;
+    margin: 10px;
+    top: 0;
+    right: 0;
+
+    font-size: $font-size-sm;
+}
